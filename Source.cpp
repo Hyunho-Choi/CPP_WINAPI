@@ -25,7 +25,8 @@ void setHeap2(int arr[], int size);
 void setHeap3(int arr[], int size);
 void countSort(vector<int> & arr);
 void countSort2(vector<int> & arr);
-void dosu(int a[], int max);
+
+void RadixSort(vector<int> & arr, int ra);
 
 int main()
 {
@@ -120,7 +121,7 @@ int main()
 	*/
 
 	srand((unsigned int)time(NULL));
-	const int size = 100000;
+	const int size = 20;
 	int arr2[size];
 	vector<int> Varr2;
 
@@ -147,10 +148,10 @@ int main()
 
 	watch.start(); // 스탑워치 시작
 
-				   // 정렬 코드 start
+	// 정렬 코드 start
 
 
-				   /*
+	/*
 				   for(int i = size / 2; i > 0 ; i = i / 3 + 1)
 				   {
 				   for(int j = i; j < size ; j++)
@@ -168,19 +169,32 @@ int main()
 				   }
 				   */ //쉘 정렬
 
-				   //shall(arr2, size);		// 쉘 소트
-				   //quick(arr2, 0, size-1);	// 퀵 소트
-				   //mergeSort(arr2, size);	// 머지 소트
+	//shall(arr2, size);		// 쉘 소트
+	//quick(arr2, 0, size-1);	// 퀵 소트
+	//mergeSort(arr2, size);	// 머지 소트
 
-				   //int test[5] = { 2,0,0,4,3 };
+	//int test[5] = { 2,0,0,4,3 };
 
-				   //heap(arr2, size);
+	//heap(arr2, size);
 
-				   //sort(Varr2.begin(), Varr2.end());
-				   //stable_sort(arr2.begin(), arr2.end());
+	//sort(Varr2.begin(), Varr2.end());
+	//stable_sort(arr2.begin(), arr2.end());
 
-				   //sort(arr2, &arr2[size]);
-	countSort2(Varr2);
+	//sort(arr2, &arr2[size]);
+	//countSort2(Varr2);
+
+	vector<int> arrtest = { 731, 333, 252,732,730,731,219,553, 1, 555,22 ,12 };
+
+	RadixSort(arrtest, 3);
+
+	cout << "정렬 후" << endl;
+	for (int i = 0; i < 8; i++)
+	{
+		cout << arrtest[i] << " ";
+	}
+	cout << endl;
+	
+
 
 	/*
 	for ()
@@ -204,20 +218,45 @@ int main()
 
 	watch.stop();  // 스탑워치 끝
 
-				   // 정렬 후 출력
-				   /*
-				   cout << "정렬 후" << endl;
-				   for (int i = 0; i < size; i++)
-				   {
-				   cout << Varr2[i] << " ";
-				   }
-				   cout << endl;
-				   */
+	// 정렬 후 출력
+	/*
+	cout << "정렬 후" << endl;
+	for (int i = 0; i < size; i++)
+	{
+	cout << Varr2[i] << " ";
+	}
+	cout << endl;
+	*/
 
 	cout << "소요시간 : " << watch.getEleapsedTime() / 1000.0 << "초" << endl;
 
 	return 0;
 }
+
+void RadixSort(vector<int> & arr, int ra)
+{
+	if (ra == 0)
+		return;
+	vector<int> temp(arr.size(), -1);
+	int size = pow(10, ra - 1);
+	int index = 0;
+	int j = 0;
+	
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < arr.size(); j++)
+		{
+			if (i == ((arr[j] / size) - (arr[j] / (size * 10)) * 10))
+			{
+				temp[index++] = arr[j];
+			}
+		}
+		RadixSort(arr, ra - 1);
+	}
+	arr.swap(temp);
+	vector<int>().swap(temp);
+}
+
 
 void countSort(vector<int> & arr)
 {
@@ -257,7 +296,6 @@ void countSort2(vector<int> & arr)
 		}
 	}
 }
-
 
 void heap(int arr[], int size)
 {
