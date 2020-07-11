@@ -25,7 +25,7 @@ void setHeap2(int arr[], int size);
 void setHeap3(int arr[], int size);
 void countSort(vector<int> & arr);
 void countSort2(vector<int> & arr);
-
+int getSingleNum(int input, int pos);
 void RadixSort(vector<int> & arr, int ra);
 
 int main()
@@ -125,6 +125,7 @@ int main()
 	int arr2[size];
 	vector<int> Varr2;
 
+	cout << getSingleNum(12345, 7) << endl;
 
 	Stopwatch watch;
 
@@ -183,12 +184,12 @@ int main()
 	//sort(arr2, &arr2[size]);
 	//countSort2(Varr2);
 
-	vector<int> arrtest = { 731, 333, 252,732,730,731,219,553, 1, 555,22 ,12 };
+	vector<int> arrtest = { 731, 333, 252,732,730,731,219,553, 555,551 ,753 ,554 ,533 ,253 };
 
 	RadixSort(arrtest, 3);
 
 	cout << "Á¤·Ä ÈÄ" << endl;
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < arrtest.size(); i++)
 	{
 		cout << arrtest[i] << " ";
 	}
@@ -255,6 +256,29 @@ void RadixSort(vector<int> & arr, int ra)
 	}
 	arr.swap(temp);
 	vector<int>().swap(temp);
+}
+
+int getSingleNum(int input, int pos)
+{
+	int temp = input * pow(0.1, pos);
+	temp *= pow(10, pos);
+	input -= temp;
+
+	return input * pow(0.1, pos-1);
+}
+
+void RadixSort2(vector<int> & arr)
+{
+
+		for (int i = 1; i < big; i++)
+		{
+			for (int j = 0; j < arr.size(); j++)
+			{
+				stable_sort(arr.begin(), arr.end(), );
+				sort(arr.begin(), arr.end().)
+				getSingleNum(arr[j], i);
+			}
+		}
 }
 
 
