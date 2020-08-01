@@ -46,17 +46,17 @@ int main()
 	callme2(headline2);
 	cout << "headline2 : " << headline2 << endl;
 
-	cout << "ÇÏ³ªÀÇ °´Ã¼¸¦ ´Ù¸¥ °´Ã¼·Î ÃÊ±âÈ­ : \n";
+	cout << "í•˜ë‚˜ì˜ ê°ì²´ë¥¼ ë‹¤ë¥¸ ê°ì²´ë¡œ ì´ˆê¸°í™” : \n";
 
 	StringBad sailor = sports;
 	cout << "sailor : " << sailor << endl;
 
-	cout << "ÇÏ³ªÀÇ °´Ã¼¸¦ ´Ù¸¥ °´Ã¼¿¡ ´ëÀÔ: \n";
+	cout << "í•˜ë‚˜ì˜ ê°ì²´ë¥¼ ë‹¤ë¥¸ ê°ì²´ì— ëŒ€ì…: \n";
 
 	StringBad knot;
 	knot = headline1;
 	cout << "knot : " << knot << endl;
-	cout << "ÀÌ ºí·ÏÀ» ºüÁ®³ª¿Â´Ù\n";
+	cout << "ì´ ë¸”ë¡ì„ ë¹ ì ¸ë‚˜ì˜¨ë‹¤\n";
 
 	}
 	cout << "End of main" << endl;
@@ -82,11 +82,11 @@ int main()
 	while (true)
 	{
 	while (true) {
-	cout << "´Ü¾î Áß ÇÑ ±ÛÀÚ¸¦ ÀÔ·ÂÇÏ½Ã¿À " << nowAnswer << " > ";
+	cout << "ë‹¨ì–´ ì¤‘ í•œ ê¸€ìë¥¼ ì…ë ¥í•˜ì‹œì˜¤ " << nowAnswer << " > ";
 	cin >> charInput;
 	if (charInput < 97 || charInput > 122)
 	{
-	cout << "¿µ¹® ¼Ò¹®ÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä. " << endl;
+	cout << "ì˜ë¬¸ ì†Œë¬¸ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”. " << endl;
 	}
 	else
 	{
@@ -96,12 +96,12 @@ int main()
 
 	if (cmpWord(charInput, answer, nowAnswer))
 	{
-	cout << charInput << "¸¦ Ç¥½ÃÇÕ´Ï´Ù." << endl;
+	cout << charInput << "ë¥¼ í‘œì‹œí•©ë‹ˆë‹¤." << endl;
 	okcount++;
 	}
 	else
 	{
-	cout << "¼û°ÜÁø ±ÛÀÚ Áß " << charInput << "Àº Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù." << endl;
+	cout << "ìˆ¨ê²¨ì§„ ê¸€ì ì¤‘ " << charInput << "ì€ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
 	okcount++;
 	miscount++;
 	}
@@ -111,9 +111,9 @@ int main()
 	if (nowAnswer == answer)
 	{
 	cout << "-----------------------------" << endl;
-	cout << nowAnswer << " Á¤´ä!!" << endl;
-	cout << "ÃÑ È½¼ö : " << okcount << endl;
-	cout << "Æ²¸° È½¼ö : " << miscount << endl;
+	cout << nowAnswer << " ì •ë‹µ!!" << endl;
+	cout << "ì´ íšŸìˆ˜ : " << okcount << endl;
+	cout << "í‹€ë¦° íšŸìˆ˜ : " << miscount << endl;
 	cout << "-----------------------------" << endl;
 	break;
 	}
@@ -135,9 +135,9 @@ int main()
 		arr2[i] = rand() % size;
 	}
 
-	// Á¤·Ä Àü Ãâ·Â
+	// ì •ë ¬ ì „ ì¶œë ¥
 	/*
-	cout << "Á¤·Ä Àü" << endl;
+	cout << "ì •ë ¬ ì „" << endl;
 	for (int i = 0; i < size; i++)
 	{
 	cout << arr2[i] << " ";
@@ -147,9 +147,9 @@ int main()
 	*/
 
 
-	watch.start(); // ½ºÅ¾¿öÄ¡ ½ÃÀÛ
+	watch.start(); // ìŠ¤íƒ‘ì›Œì¹˜ ì‹œì‘
 
-	// Á¤·Ä ÄÚµå start
+	// ì •ë ¬ ì½”ë“œ start
 
 
 	/*
@@ -168,11 +168,11 @@ int main()
 				   if (i == 1)
 				   break;
 				   }
-				   */ //½© Á¤·Ä
+				   */ //ì‰˜ ì •ë ¬
 
-	//shall(arr2, size);		// ½© ¼ÒÆ®
-	//quick(arr2, 0, size-1);	// Äü ¼ÒÆ®
-	//mergeSort(arr2, size);	// ¸ÓÁö ¼ÒÆ®
+	//shall(arr2, size);		// ì‰˜ ì†ŒíŠ¸
+	//quick(arr2, 0, size-1);	// í€µ ì†ŒíŠ¸
+	//mergeSort(arr2, size);	// ë¨¸ì§€ ì†ŒíŠ¸
 
 	//int test[5] = { 2,0,0,4,3 };
 
@@ -188,7 +188,7 @@ int main()
 
 	RadixSort(arrtest, 3);
 
-	cout << "Á¤·Ä ÈÄ" << endl;
+	cout << "ì •ë ¬ í›„" << endl;
 	for (int i = 0; i < arrtest.size(); i++)
 	{
 		cout << arrtest[i] << " ";
@@ -214,14 +214,14 @@ int main()
 	}
 	*/
 
-	// Á¤·Ä ÄÚµå end
+	// ì •ë ¬ ì½”ë“œ end
 
 
-	watch.stop();  // ½ºÅ¾¿öÄ¡ ³¡
+	watch.stop();  // ìŠ¤íƒ‘ì›Œì¹˜ ë
 
-	// Á¤·Ä ÈÄ Ãâ·Â
+	// ì •ë ¬ í›„ ì¶œë ¥
 	/*
-	cout << "Á¤·Ä ÈÄ" << endl;
+	cout << "ì •ë ¬ í›„" << endl;
 	for (int i = 0; i < size; i++)
 	{
 	cout << Varr2[i] << " ";
@@ -229,7 +229,7 @@ int main()
 	cout << endl;
 	*/
 
-	cout << "¼Ò¿ä½Ã°£ : " << watch.getEleapsedTime() / 1000.0 << "ÃÊ" << endl;
+	cout << "ì†Œìš”ì‹œê°„ : " << watch.getEleapsedTime() / 1000.0 << "ì´ˆ" << endl;
 
 	return 0;
 }
@@ -323,19 +323,19 @@ void countSort2(vector<int> & arr)
 
 void heap(int arr[], int size)
 {
-	// ¹İº¹ size¸¸Å­
+	// ë°˜ë³µ sizeë§Œí¼
 
-	// Èü±¸Á¶¸¦ ¸¸µå´Â ÄÚµå
+	// í™êµ¬ì¡°ë¥¼ ë§Œë“œëŠ” ì½”ë“œ
 
-	// ¸Ç¾Õ °ªÀ» ¸ÇµÚ·Î º¸³»°í
+	// ë§¨ì• ê°’ì„ ë§¨ë’¤ë¡œ ë³´ë‚´ê³ 
 
-	// ÀüÃ¼ Å©±â¿¡¼­ -1
+	// ì „ì²´ í¬ê¸°ì—ì„œ -1
 
 	/*
-	ÀÚ½Å ±âÁØ (ÀÚ½Å = i)
-	1. ºÎ¸ğ´Â		a[(i-1) / 2]  //i==0 ÀÏ °æ¿ì ºÎ¸ğ°¡ -°ª
-	2. ¿ŞÂÊ ÀÚ½ÄÀº	a[i*2 + 1]
-	3. ¿À¸¥ÂÊ ÀÚ½ÄÀº	a[i*2 + 2]
+	ìì‹  ê¸°ì¤€ (ìì‹  = i)
+	1. ë¶€ëª¨ëŠ”		a[(i-1) / 2]  //i==0 ì¼ ê²½ìš° ë¶€ëª¨ê°€ -ê°’
+	2. ì™¼ìª½ ìì‹ì€	a[i*2 + 1]
+	3. ì˜¤ë¥¸ìª½ ìì‹ì€	a[i*2 + 2]
 	*/
 
 	for (int i = 0; i < size - 2; i++)
